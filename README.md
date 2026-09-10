@@ -1,6 +1,8 @@
 # Laboratory Activity 1 
 ## CLIENT-BASED WEBSITEDEVELOPMENT ACTIVITY"
 
+Sample Video Link: https://drive.google.com/drive/folders/1ITvBEjiWLCbBPK6cAXhHCr1LFy-3nzcG?usp=sharing
+
 Fonts:
   1. Lora - Primary
   2. De Vinne - Secondary
