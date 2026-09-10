@@ -9,14 +9,14 @@ html {
 }
 
 body {
-    font-family: "Lora", "Georgia", serif;
+    font-family: "Lora";
     background-color: #F8F1E8;
     color: #2D211B;
     line-height: 1.7;
 }
 
 h1, h2, h3, .logo {
-    font-family: "De Vinne", "Georgia", serif;
+    font-family: "De Vinne";
     font-weight: 700;
     letter-spacing: 0.5px;
 }
@@ -46,6 +46,7 @@ a {
     --cream-foam: #F8F1E8;
     --cinnamon: #B9784D;
     --shadow: 0 8px 30px rgba(45, 33, 27, 0.10);
+    --shadow-hover: 0 12px 40px rgba(45, 33, 27, 0.18);
 }
 
 .btn {
@@ -171,10 +172,11 @@ nav {
 }
 
 .hero-image img {
-    width: 100%;
-    max-width: 650px;
+    width: 110%;
+    height: auto;
+    max-width: 750px;
     object-fit: cover;
-    max-height: 550px;
+    max-height: 600px;
     border-radius: 24px;
     box-shadow: var(--shadow);
 }
@@ -194,7 +196,7 @@ section {
 }
 
 #menu {
-    scroll-margin-top: 30px;
+    scroll-margin-top: 60px;
 }
 
 #visit {
@@ -221,20 +223,21 @@ section {
 
 .highlights {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem 1.5rem;
-    margin-top: 1rem;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
 .highlight-item {
     font-weight: 600;
     color: var(--cream-foam);
     background: var(--coffee-bean);
-    padding: 0.4rem 1.4rem;
+    padding: 0.5rem 1.6rem;
     border-radius: 40px;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 
 .about-image img {
@@ -263,6 +266,7 @@ section {
 .menu-card:hover {
     transform: translateY(-5px);
     border-color: var(--cinnamon);
+    box-shadow: var(--shadow-hover);
 }
 
 .menu-card img {
@@ -274,7 +278,7 @@ section {
 }
 
 .menu-card h3 {
-    font-family: "De Vinne", "Georgia", serif;
+    font-family: "De Vinne";
     font-size: 1.4rem;
     margin-top: 1rem;
     color: var(--coffee-bean);
@@ -320,37 +324,61 @@ section {
     align-items: start;
 }
 
-.visit-info p {
-    font-size: 1.05rem;
-    margin: 0.6rem 0;
+.visit-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.visit-info strong {
-    color: var(--coffee-bean);
+.visit-info .section-title {
+    margin-bottom: 0.5rem;
 }
 
 .hours {
     background: var(--cream-foam);
     padding: 1.5rem 2rem;
     border-radius: 20px;
-    margin: 1.2rem 0;
     border: 1px solid var(--oat-milk);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.hours:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--cinnamon);
+}
+
+.hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.hours-grid .col:first-child {
+    border-right: 1px solid var(--oat-milk);
+    padding-right: 1rem;
+}
+
+.hours-grid .col:last-child {
+    padding-left: 1rem;
 }
 
 .hours p {
     margin: 0.3rem 0;
+    font-size: 1.05rem;
+}
+
+.hours strong {
+    color: var(--coffee-bean);
 }
 
 .visit-map {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-top: 5.7rem;
-    transform: translateY(0px);
-    -webkit-transform: translateY(0px);
-    -moz-transform: translateY(0px);
-    -ms-transform: translateY(0px);
-    -o-transform: translateY(0px);
+    margin-top: 4.8rem;
 }
 
 .map-container {
@@ -394,6 +422,19 @@ section {
     align-items: start;
 }
 
+.contact-grid > div:first-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-grid > div:first-child .section-title {
+    margin-bottom: 1rem;
+}
+
+.contact-grid > div:first-child form {
+    flex: 1;
+}
+
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -432,13 +473,17 @@ textarea {
     resize: vertical;
 }
 
+.contact-info-side {
+    padding-top: 3.8rem;
+}
+
 .contact-info-side p {
     margin: 1rem 0;
     font-size: 1rem;
 }
 
 .contact-info-side h3 {
-    font-family: "De Vinne", "Georgia", serif;
+    font-family: "De Vinne";
     font-size: 1.8rem;
     color: var(--coffee-bean);
     margin-bottom: 0.6rem;
@@ -493,7 +538,7 @@ footer {
 }
 
 .footer-grid h4 {
-    font-family: "De Vinne", "Georgia", serif;
+    font-family: "De Vinne";
     font-size: 1.1rem;
     margin-bottom: 0.6rem;
     color: var(--cream-foam);
@@ -537,6 +582,7 @@ footer {
     .hero-image img {
         max-height: 350px;
         max-width: 100%;
+        width: 100%;
     }
 
     .nav-links {
@@ -552,6 +598,11 @@ footer {
 
     .highlights {
         justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .highlight-item {
+        white-space: normal;
     }
 
     .menu-grid {
@@ -564,13 +615,35 @@ footer {
         gap: 2rem;
     }
 
+    .visit-map {
+        margin-top: 0;
+    }
+
     .map-container iframe {
         height: 250px;
+    }
+
+    .hours-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .hours-grid .col:first-child {
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .hours-grid .col:last-child {
+        padding-left: 0;
     }
 
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .contact-info-side {
+        padding-top: 0;
     }
 
     #contact {
@@ -629,7 +702,8 @@ footer {
     }
 
     .hero-image img {
-        max-height: 220px;
+        max-height: 250px;
+        width: 100%;
     }
 
     .menu-grid {
@@ -669,11 +743,14 @@ footer {
 
     .highlights {
         gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .highlight-item {
         font-size: 0.7rem;
         padding: 0.3rem 0.8rem;
+        white-space: normal;
     }
 
     .visit-grid {
@@ -682,6 +759,20 @@ footer {
 
     .hours {
         padding: 1rem 1.2rem;
+    }
+
+    .hours-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .hours-grid .col:first-child {
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .hours-grid .col:last-child {
+        padding-left: 0;
     }
 
     .map-container iframe {
@@ -694,6 +785,10 @@ footer {
 
     .contact-grid {
         gap: 1.5rem;
+    }
+
+    .contact-info-side {
+        padding-top: 0;
     }
 
     #contact {
@@ -735,10 +830,6 @@ footer {
         font-size: 0.7rem;
         margin-top: 1.2rem;
         padding-top: 1.2rem;
-    }
-
-    .contact-info-side h3 {
-        font-size: 1.3rem;
     }
 
     section {
